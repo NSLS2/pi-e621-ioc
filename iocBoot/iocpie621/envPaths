@@ -1,0 +1,6 @@
+epicsEnvSet("IOC","iocpie621")
+epicsEnvSet("TOP","/epics/iocs/pi-vms")
+epicsEnvSet("SUPPORT","/epics/support")
+epicsEnvSet("PI3","/epics/support/pi3")
+epicsEnvSet("HXN","/epics/support/hxn-common")
+epicsEnvSet("EPICS_BASE","/usr/lib/epics")

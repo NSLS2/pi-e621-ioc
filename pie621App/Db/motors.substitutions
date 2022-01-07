@@ -1,0 +1,6 @@
+file "$(HXN)/db/asyn_motor_alias.db"
+{
+pattern
+{                   P,       PORT, ADDR,        DTYP,   ALIAS,    DESC,  EGU, DIR, TWV,  VELO, VBAS, ACCL, BDST, BVEL, BACC,     MRES, PREC, DHLM, DLLM, INIT}
+{"$\(P){VMS:1-Ax:PF}", "$\(PORT)",    0, "asynMotor", "vms_pf", "vms_pf", urad, Pos,   1,    5.,  2.0,  0.1,    0,    1,   .2, 0.000001,    3,    0,    0,   ""}
+}

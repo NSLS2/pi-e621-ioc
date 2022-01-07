@@ -1,0 +1,7 @@
+NAME=pi-vms
+USER=softioc
+PORT=6112
+HOST=xf03idc-ioc2
+
+
+

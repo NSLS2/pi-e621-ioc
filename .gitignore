@@ -1,0 +1,10 @@
+syntax: glob
+as/*
+*~
+.*project
+O.*
+db/*
+dbd/*
+bin/*
+*.dbl
+.hg
