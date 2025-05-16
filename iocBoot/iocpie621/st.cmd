@@ -23,7 +23,8 @@ drvAsynIPPortConfigure("P0", "xf09id1-tsrv6.nsls2.bnl.gov:4001")
 E816CreateController("$(PI_PORT)", "P0", 1, 50)
 
 ## Load record instances
-dbLoadRecords("$(TOP)/db/motors.db", "P=$(P),PORT=$(PI_PORT)")
+dbLoadTemplate("${TOP}/db/motors.substitutions", "PP=$(P),PI_PORT=$(PI_PORT)")
+# dbLoadRecords("$(TOP)/db/motors.db", "P=$(P),PORT=$(PI_PORT)")
 dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_PREFIX),PORT=$(PI_PORT),ADDR=0")
 
 ## autosave/restore machinery
