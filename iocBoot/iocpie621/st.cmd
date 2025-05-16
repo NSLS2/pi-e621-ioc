@@ -1,22 +1,22 @@
 #!../../bin/linux-x86_64/pie621
 
-epicsEnvSet("ENGINEER",  "jma x3119")
+epicsEnvSet("ENGINEER",  "C. Engineer")
 epicsEnvSet("LOCATION",  "740 HXN RGA 1")
 
-epicsEnvSet("P",         "XF:03IDA-OP")
+epicsEnvSet("P",         "XF:09IDA-OP:1")
 epicsEnvSet("IOCNAME",   "pi-vms")
 epicsEnvSet("PI_PORT",   "PI_VMS")
 epicsEnvSet("IOC_PREFIX", "$(P){IOC:$(IOCNAME)}")
 
 
 < envPaths
-< /epics/common/xf03idc-ioc2-netsetup.cmd
+< /epics/common/xf09id1-ioc1-netsetup.cmd
 
 ## Register all support components
 dbLoadDatabase("../../dbd/pie621.dbd",0,0)
 pie621_registerRecordDeviceDriver(pdbbase) 
 
-drvAsynIPPortConfigure("P0", "xf03ida-tsrv2.nsls2.bnl.local:4016")
+drvAsynIPPortConfigure("P0", "xf09id1-tsrv6.nsls2.bnl.gov:4001")
 # asynSetTraceMask("P0", -1, 0x9)
 # asynSetTraceIOMask("P0", -1, 0x2)
 
@@ -58,4 +58,4 @@ create_monitor_set("info_settings.req", 15 , "")
 
 cd ${TOP}
 dbl > ./records.dbl
-system "cp ./records.dbl /cf-update/$HOSTNAME.$IOCNAME.dbl"
+#system "cp ./records.dbl /cf-update/$HOSTNAME.$IOCNAME.dbl"

@@ -24,13 +24,13 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 # If using the sequencer, point SNCSEQ at its top directory:
 #SNCSEQ=$(EPICS_BASE)/../modules/soft/seq
 
-SUPPORT=/epics/support
-PI3=$(SUPPORT)/pi3
-HXN=$(SUPPORT)/hxn-common
-ASYN=$(SUPPORT)/asyn/R4-27
-MOTOR=$(SUPPORT)/motor/6-9
-
+SUPPORT=/usr/lib/epics
+#HXN=$(SUPPORT)/hxn-common
+ASYN=/usr/lib/epics
+MOTOR=/usr/lib/epics
 EPICS_BASE=/usr/lib/epics
+
+PI3=/epics/modules/pi3
 
 # Set RULES here if you want to take build rules from somewhere
 # other than EPICS_BASE:

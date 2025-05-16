@@ -1,10 +1,16 @@
-syntax: glob
-as/*
+as/
+bin/
+db/
+dbd/
+lib/
+^pmc/
+iocBoot/*/envPaths
+O.*/
+\#*#
 *~
-.*project
-O.*
-db/*
-dbd/*
-bin/*
-*.dbl
-.hg
+records.dbl
+.bzr/
+.bzrignore
+.hg/
+.hgignore
+.vscode/
