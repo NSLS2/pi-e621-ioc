@@ -10,8 +10,9 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install) into <top>/db
 # databases, templates, substitutions like this
-DB += motors.db
+DB += asyn_motor.db
 DB += asynComm.db
+DB += motors.substitutions
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
