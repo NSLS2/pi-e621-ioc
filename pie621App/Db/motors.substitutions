@@ -1,6 +1,6 @@
 file "$(TOP)/db/asyn_motor.db"
 {
 pattern
-{                   P,       PORT, ADDR,        DTYP,   ALIAS,    DESC,  EGU, DIR, TWV,  VELO, VBAS, ACCL, BDST, BVEL, BACC,     MRES, PREC, DHLM, DLLM, INIT}
-{"$(PP){Mono:HDCM-Ax:FP}", "$(PI_PORT)",    0, "asynMotor", "vms_pf", "vms_pf", urad, Pos,   1,    5.,  2.0,  0.1,    0,    1,   .2, 0.000001,    3,    0,    0,   ""}
+{                   P,       PORT, ADDR,        DTYP,   DESC,  EGU, DIR, TWV,  VELO, VBAS, ACCL, BDST, BVEL, BACC,     MRES, PREC, DHLM, DLLM, INIT}
+{"$(PP){Mono:HDCM-Ax:FP}", "$(PI_PORT)",    0, "asynMotor", "vms_pf", urad, Pos,   1,    5.,  2.0,  0.1,    0,    1,   .2, 0.000001,    3,    0,    0,   ""}
 }
