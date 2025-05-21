@@ -1,5 +1,6 @@
 record(motor,"$(P)Mtr")
 {
+    alias("$(ALIAS)")
     field(DESC,"$(DESC)")
     field(DTYP,"$(DTYP)")
     field(OUT,"@asyn($(PORT),$(ADDR))")
