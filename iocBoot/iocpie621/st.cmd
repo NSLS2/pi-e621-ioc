@@ -28,7 +28,7 @@ dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_SYS)$(IOC_DEV),PORT=$(PI_PORT),AD
 
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminSoft.db", "IOC=$(IOC_SYS)$(IOC_DEV)")
 dbLoadRecords("$(AUTOSAVE)/db/save_restoreStatus.db", "P=$(IOC_SYS)$(IOC_DEV)")
-dbLoadRecords("${TOP}/db/reccaster.db", "P=${IOC_SYS}$(IOC_DEV)RecSync")
+dbLoadRecords("${RECCASTER}/db/reccaster.db", "P=${IOC_SYS}$(IOC_DEV)RecSync")
 
 ## autosave/restore machinery
 save_restoreSet_Debug(0)
