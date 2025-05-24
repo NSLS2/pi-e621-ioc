@@ -3,10 +3,11 @@
 epicsEnvSet("ENGINEER",  "C. Engineer")
 epicsEnvSet("LOCATION",  "740 HXN RGA 1")
 
-epicsEnvSet("P",         "XF:09IDA-OP:1")
 epicsEnvSet("IOCNAME",   "pi-vms")
+epicsEnvSet("SYS",       "XF:09IDA-OP:1")
 epicsEnvSet("PI_PORT",   "PI_VMS")
-epicsEnvSet("IOC_PREFIX", "$(P){IOC:$(IOCNAME)}")
+epicsEnvSet("IOC_SYS",   "XF:09IDA-OP:1")
+epicsEnvSet("IOC_DEV",   "{IOC:$(IOCNAME)}")
 
 < envPaths
 < /epics/common/xf09id1-ioc1-netsetup.cmd
@@ -22,8 +23,12 @@ drvAsynIPPortConfigure("P0", "xf09id1-tsrv6.nsls2.bnl.gov:4001")
 E816CreateController("$(PI_PORT)", "P0", 1, 50)
 
 ## Load record instances
-dbLoadTemplate("${TOP}/db/motors.substitutions", "PP=$(P),PI_PORT=$(PI_PORT)")
-dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_PREFIX),PORT=$(PI_PORT),ADDR=0")
+dbLoadTemplate("${TOP}/db/motors.substitutions", "PP=$(SYS),PI_PORT=$(PI_PORT)")
+dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_SYS)$(IOC_DEV),PORT=$(PI_PORT),ADDR=0")
+
+dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminSoft.db", "IOC=$(IOC_SYS)$(IOC_DEV)")
+dbLoadRecords("$(AUTOSAVE)/db/save_restoreStatus.db", "P=$(IOC_SYS)$(IOC_DEV)")
+dbLoadRecords("${TOP}/db/reccaster.db", "P=${IOC_SYS}$(IOC_DEV)RecSync")
 
 ## autosave/restore machinery
 save_restoreSet_Debug(0)
@@ -40,9 +45,7 @@ set_pass0_restoreFile("info_positions.sav")
 set_pass0_restoreFile("info_settings.sav")
 set_pass1_restoreFile("info_settings.sav")
 
-dbLoadRecords("$(EPICS_BASE)/db/save_restoreStatus.db","P=$(IOC_PREFIX)")
-dbLoadRecords("$(EPICS_BASE)/db/iocAdminSoft.db","IOC=$(IOC_PREFIX)")
-save_restoreSet_status_prefix("$(IOC_PREFIX)")
+save_restoreSet_status_prefix("$(IOC_SYS)$(IOC_DEV)")
 
 iocInit()
 

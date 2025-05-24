@@ -14,6 +14,10 @@ DB += asyn_motor.db
 DB += asynComm.db
 DB += motors.substitutions
 
+ifneq ($(RECCASTER),)
+DB_INSTALLS += $(RECCASTER)/db/reccaster.db
+endif
+
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
 # <anyname>_template = <templatename>

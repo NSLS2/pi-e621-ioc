@@ -38,6 +38,11 @@ pie621_LIBS += stream
 # Add all the support libraries needed by this IOC
 pie621_LIBS += motor pi3 asyn autosave
 
+ifneq ($(RECCASTER),)
+pie621_DBD += reccaster.dbd
+pie621_LIBS += reccaster
+endif
+
 # pie621_registerRecordDeviceDriver.cpp derives from pie621.dbd
 pie621_SRCS += pie621_registerRecordDeviceDriver.cpp
 
