@@ -24,7 +24,7 @@ E816CreateController("$(PI_PORT)", "P0", 1, 50)
 
 ## Load record instances
 dbLoadTemplate("${TOP}/db/motors.substitutions", "PP=$(SYS),PI_PORT=$(PI_PORT)")
-dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_SYS)$(IOC_DEV),PORT=$(PI_PORT),ADDR=0")
+dbLoadRecords("$(TOP)/db/asynComm.db","P=$(IOC_SYS)$(IOC_DEV),PORT=P0,ADDR=0")
 
 dbLoadRecords("$(DEVIOCSTATS)/db/iocAdminSoft.db", "IOC=$(IOC_SYS)$(IOC_DEV)")
 dbLoadRecords("$(AUTOSAVE)/db/save_restoreStatus.db", "P=$(IOC_SYS)$(IOC_DEV)")
